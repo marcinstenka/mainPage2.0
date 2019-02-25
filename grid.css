@@ -1,0 +1,98 @@
+
+body{
+    margin: 0;
+    font-family: 'Fjalla One', sans-serif;
+    color:white;
+    width: 100%;    
+}
+
+.wraper{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: url(img/37709.jpg);
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.content{
+    width: 1590px;
+    min-height: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+h1{
+    letter-spacing: 3px;
+    
+    font-size: 46px;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+}
+h1 span{
+    color:dodgerblue;
+}
+.row{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.rectangle-vertically{
+    position: relative;
+    width: 310px;
+    height: 150px;
+    background: rgb(0,0,0, 0.8);
+    grid-column-end: span 2;
+    
+}
+
+.rectangle-horizontally{
+    position: relative;
+    width: 150px;
+    height: 310px;
+    background: rgb(0,0,0, 0.4);
+    grid-row-end: span 2;
+    
+}
+.square{
+    position: relative;
+    width:150px;
+    height: 150px;
+    background: rgb(255,255,255, 0.4);    
+}
+.square > i{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 60px;
+    transform: translate(-50%, -50%);
+}
+.square p{
+    margin: 0;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.rectangle-horizontally > i{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 60px;
+    transform: translate(-50%, -50%);
+}
+.rectangle-vertically > i{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 60px;
+    transform: translate(-50%, -50%);
+}
