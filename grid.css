@@ -1,33 +1,38 @@
-
+*{
+    box-sizing: border-box;
+}
 body{
     margin: 0;
     font-family: 'Fjalla One', sans-serif;
     color:white;
-    width: 100%;    
+    width: 100%; 
+    min-height: 100vh;
 }
 
 .wraper{
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
-    background: url(img/37709.jpg);
+    background: url(img/37709.jpg) no-repeat center;
     
     position: absolute;
     top: 0;
     left: 0;
 }
 .content{
-    width: 1590px;
+    min-width: 1590px;
     min-height: 750px;
     margin-left: auto;
     margin-right: auto;
     
 }
+a{
+    color: white;
+}
 h1{
     letter-spacing: 3px;
-    
     font-size: 46px;
     text-align: center;
     text-transform: uppercase;
@@ -36,20 +41,37 @@ h1{
 h1 span{
     color:dodgerblue;
 }
-.row{
+.grid{
     display: grid;
     width: 100%;
     grid-template-columns: repeat(10,1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+}
+ .cube, .cube div {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+.cube div{
+    transition:none;
+}
+.cube-bottom {
+    background-size: 100%;
+    transform: translate(0, 100%) rotateX(-90deg);
+    transform-origin: top;
 }
 
 .rectangle-vertically{
     position: relative;
     width: 310px;
     height: 150px;
-    background: rgb(0,0,0, 0.8);
+    border:0.25px solid rgb(255,255,255,0.4);
     grid-column-end: span 2;
     
 }
@@ -58,7 +80,7 @@ h1 span{
     position: relative;
     width: 150px;
     height: 310px;
-    background: rgb(0,0,0, 0.4);
+    border:0.25px solid rgb(255,255,255,0.4);
     grid-row-end: span 2;
     
 }
@@ -66,9 +88,10 @@ h1 span{
     position: relative;
     width:150px;
     height: 150px;
-    background: rgb(255,255,255, 0.4);    
+    border:0.25px solid rgb(255,255,255,0.4);
+       
 }
-.square > i{
+.square .cube > * > i{
     position: absolute;
     top: 40%;
     left: 50%;
@@ -76,23 +99,55 @@ h1 span{
     transform: translate(-50%, -50%);
 }
 .square p{
+    font-size: 32px;
     margin: 0;
     position: absolute;
-    bottom: 20px;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.rectangle-horizontally > i{
+
+
+
+
+.square:hover .cube {
+    transform: translate(0, -50%) rotateX(90deg);
+    
+}
+
+.rectangle-horizontally:hover .cube {
+    transform: translate(0, -50%) rotateX(90deg);
+}
+.rectangle-horizontally .cube > * > i{
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     font-size: 60px;
     transform: translate(-50%, -50%);
 }
-.rectangle-vertically > i{
+.rectangle-horizontally p{
+    font-size: 32px;
+    margin: 0;
     position: absolute;
-    top: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.rectangle-vertically:hover .cube {
+    transform: translate(0, -50%) rotateX(90deg);
+}
+.rectangle-vertically .cube > * > i{
+    position: absolute;
+    top: 50%;
     left: 50%;
     font-size: 60px;
+    transform: translate(-50%, -50%);
+}
+.rectangle-vertically p{
+    font-size: 32px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
